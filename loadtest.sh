@@ -75,6 +75,13 @@ spec:
       containers:
       - name: nginx
         image: nginx
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
         ports:
         - containerPort: 80
           livenessProbe:
@@ -83,6 +90,7 @@ spec:
               port: 80
             initialDelaySeconds: 5
             periodSeconds: 5
+
 EOF
 done 
 }
