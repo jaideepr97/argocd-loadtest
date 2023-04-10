@@ -1,6 +1,6 @@
 #!/bin/sh
 
-total_apps=1000
+total_apps=10
 total_resources=3
 
 function generate() {
@@ -20,7 +20,7 @@ metadata:
   name: cm-dir$a-num$b
 data:
   test.json: |
-  {
+   {
       "maxThreadCount": 10,
       "trackerConfigs": [{
               "url": "https://example1.com/",
@@ -45,7 +45,7 @@ data:
           "url": "https://example.com/master.json",
           "type": "JSON"
       }]
-  }
+    }
 EOF
   done
 done
