@@ -4,7 +4,7 @@ metadata:
   name: cm-dir531-num3
 data:
   test.json: |
-  {
+   {
       "maxThreadCount": 10,
       "trackerConfigs": [{
               "url": "https://example1.com/",
@@ -29,4 +29,4 @@ data:
           "url": "https://example.com/master.json",
           "type": "JSON"
       }]
-  }
+    }

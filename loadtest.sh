@@ -1,6 +1,6 @@
 #!/bin/sh
 
-total_apps=10
+total_apps=1000
 total_resources=3
 
 function generate() {
@@ -150,7 +150,11 @@ for a in $(seq 1 $total_apps); do
 done
 }
 
-while getopts ":gad" option; do
+function delete_folders() {
+	rm -rf test-app-*
+}
+
+while getopts ":gadf" option; do
   case $option in
     g) 
       echo "generating"
@@ -163,6 +167,10 @@ while getopts ":gad" option; do
     d)
       echo "deleting"
       delete
+      exit;;
+    f)
+      echo "deleting folders"
+      delete_folders
       exit;;
   esac
 done
